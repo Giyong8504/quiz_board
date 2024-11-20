@@ -1,0 +1,34 @@
+spring:
+  profiles:
+    active: dev
+
+  servlet:
+    multipart:
+      maxFileSize: 10MB
+      maxRequestSize: 20MB
+
+  # JPA 설정
+  jpa:
+    properties:
+      hibernate:
+        # 실행되는 쿼리 콘솔 출력
+        show_sql: true
+        # 콘솔 창에 출력되는 쿼리를 가독성 좋게 포매팅
+        format_sql: true
+        use_sql_comments: true
+        dialect: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: create
+
+    database-platform: org.hibernate.dialect.MySQLDialect
+
+  # 데이터베이스 연결 설정
+  datasource:
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: quizboard
+    url: jdbc:mysql://localhost:3306/quizboard
+
+  h2:
+    console:
+      enabled: true
