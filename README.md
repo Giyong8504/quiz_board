@@ -148,6 +148,6 @@
 ## ER 다이어그램
 
 ### [eXERD를 사용 ER 다이어그램 링크](https://blog.naver.com/kky5163/223664196794)
-![image](https://github.com/user-attachments/assets/9dc7d56a-560b-4b95-a08b-36b1b2ca0233)
+![image](https://github.com/user-attachments/assets/f7cec1d3-349a-490a-b0d3-f6943a07b1b1)
 
 ---
