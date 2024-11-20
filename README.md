@@ -143,3 +143,10 @@
         - 회원 정보
             - 관리자만 USER, DISABLE 권한변경
             - 관리자만 강제 탈퇴 가능
+
+---
+## ER 다이어그램
+
+### [eXERD를 사용 ER 다이어그램 링크](https://blog.naver.com/kky5163/223664196794)
+![image](https://github.com/user-attachments/assets/3bb63444-5948-4303-8ba5-91e5260bb35b)
+---
