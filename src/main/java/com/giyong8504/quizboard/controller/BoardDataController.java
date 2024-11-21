@@ -7,10 +7,7 @@ import com.giyong8504.quizboard.service.BoardDataService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,6 +24,14 @@ public class BoardDataController {
                 .stream().map(BoardDataResponse::new).toList();
 
         return ResponseEntity.ok().body(findAll); // 200응답 코드와 함께 body에 담아 반환
+    }
+
+    // 사용자 게시글 조회
+    @GetMapping("/api/board/{id}")
+    public ResponseEntity<BoardDataResponse> findById(@PathVariable Long id) {
+        BoardData findById = boardDataService.findById(id);
+
+        return ResponseEntity.ok().body(new BoardDataResponse(findById));
     }
 
     // 사용자 게시글 저장

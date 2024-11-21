@@ -19,6 +19,13 @@ public class BoardDataService {
         return repository.findAll();
     }
 
+    // 게시글 조회
+    public BoardData findById(Long id) {
+        return repository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("not found " +id));
+
+    }
+
     // 게시글 저장
     public BoardData save(AddBoardDataRequest request) {
         return repository.save(request.toEntity());
