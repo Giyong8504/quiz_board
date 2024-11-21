@@ -1,10 +1,15 @@
 package com.giyong8504.quizboard.controller;
 
+import com.giyong8504.quizboard.dto.AddBoardDataRequest;
 import com.giyong8504.quizboard.dto.BoardDataResponse;
+import com.giyong8504.quizboard.entities.BoardData;
 import com.giyong8504.quizboard.service.BoardDataService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -22,5 +27,13 @@ public class BoardDataController {
                 .stream().map(BoardDataResponse::new).toList();
 
         return ResponseEntity.ok().body(findAll); // 200응답 코드와 함께 body에 담아 반환
+    }
+
+    // 사용자 게시글 저장
+    @PostMapping("/api/board")
+    public ResponseEntity<BoardData> save(@RequestBody AddBoardDataRequest request) {
+        BoardData saveBoardData = boardDataService.save(request);
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(saveBoardData);
     }
 }

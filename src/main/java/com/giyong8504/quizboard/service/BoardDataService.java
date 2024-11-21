@@ -1,5 +1,6 @@
 package com.giyong8504.quizboard.service;
 
+import com.giyong8504.quizboard.dto.AddBoardDataRequest;
 import com.giyong8504.quizboard.entities.BoardData;
 import com.giyong8504.quizboard.repositories.BoardDataRepository;
 import lombok.RequiredArgsConstructor;
@@ -17,4 +18,10 @@ public class BoardDataService {
     public List<BoardData> findAllData() {
         return repository.findAll();
     }
+
+    // 게시글 저장
+    public BoardData save(AddBoardDataRequest request) {
+        return repository.save(request.toEntity());
+    }
+
 }

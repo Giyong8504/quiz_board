@@ -1,14 +1,12 @@
 package com.giyong8504.quizboard.entities;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED) // 기본 생성자 추가
 @AllArgsConstructor // 모든 필드값을 파라미터로 받음
 @Getter @Entity
+@Builder
 public class BoardData extends BaseEntity{ // 공통 부분 상속
 
     @Id
@@ -24,5 +22,17 @@ public class BoardData extends BaseEntity{ // 공통 부분 상속
 
     @Column(name = "author", nullable = false)
     private String author;
+
+    /*
+
+    @Builder를 사용 안할 시.
+
+    public BoardData(String title, String content, String author) {
+        this.title = title;
+        this.content = content;
+        this.author = author;
+    }
+
+    */
 
 }
