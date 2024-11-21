@@ -31,4 +31,9 @@ public class BoardDataService {
         return repository.save(request.toEntity());
     }
 
+    // 게시글 삭제
+    public void delete(Long id) {
+        repository.deleteById(id);
+    }
+
 }

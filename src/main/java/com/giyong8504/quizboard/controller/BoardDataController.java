@@ -41,4 +41,12 @@ public class BoardDataController {
 
         return ResponseEntity.status(HttpStatus.CREATED).body(saveBoardData);
     }
+
+    // 사용자 게시글 삭제
+    @DeleteMapping("/api/board/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        boardDataService.delete(id);
+
+        return ResponseEntity.ok().build();
+    }
 }
