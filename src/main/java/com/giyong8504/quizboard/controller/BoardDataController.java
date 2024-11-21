@@ -2,6 +2,7 @@ package com.giyong8504.quizboard.controller;
 
 import com.giyong8504.quizboard.dto.AddBoardDataRequest;
 import com.giyong8504.quizboard.dto.BoardDataResponse;
+import com.giyong8504.quizboard.dto.UpdateBoardDataRequest;
 import com.giyong8504.quizboard.entities.BoardData;
 import com.giyong8504.quizboard.service.BoardDataService;
 import lombok.RequiredArgsConstructor;
@@ -49,4 +50,13 @@ public class BoardDataController {
 
         return ResponseEntity.ok().build();
     }
+
+    // 사용자 게시글 수정
+    @PutMapping("/api/board/{id}")
+    public ResponseEntity<BoardDataResponse> update(@PathVariable Long id, @RequestBody UpdateBoardDataRequest request) {
+        BoardData updateBoardData = boardDataService.update(id, request);
+
+        return ResponseEntity.ok().body(new BoardDataResponse(updateBoardData));
+    }
+
 }

@@ -23,6 +23,13 @@ public class BoardData extends BaseEntity{ // 공통 부분 상속
     @Column(name = "author", nullable = false)
     private String author;
 
+
+    // 게시글 수정 메서드
+    public void update(String title, String content) {
+        this.title = title;
+        this.content = content;
+    }
+
     /*
 
     @Builder를 사용 안할 시.
