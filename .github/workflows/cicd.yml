@@ -5,6 +5,7 @@ name: CI/CD
 on:
   push:
     branches: [ master ] # 자신의 branch에 맞게 설정 (main으로 되어있을 수도 있음.)
+  pull_request: # pull request 생성 및 업데이트 시 실행
 
 jobs:
   build:
