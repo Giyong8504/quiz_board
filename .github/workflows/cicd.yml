@@ -3,12 +3,13 @@ name: CI/CD
 
 # 워크플로가 시작될 조건 지정
 on:
-  push:
+  pull_request: # pull request 생성 및 업데이트 시 실행
     branches: [ master ] # 자신의 branch에 맞게 설정 (main으로 되어있을 수도 있음.)
   pull_request: # pull request 생성 및 업데이트 시 실행
 
+
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest # 실행 환경 지정
 
     # 실행 스텝 지정
