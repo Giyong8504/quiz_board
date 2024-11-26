@@ -37,7 +37,7 @@
 ### Tools
 ![intellij-icon](https://github.com/Giyong8504/memberBoard/assets/128211712/60bb943d-8b2d-4743-bddf-981463b17fc5)IntelliJ
 ![mysql-icon](https://github.com/Giyong8504/memberBoard/assets/128211712/7e2d7068-2227-4a7d-a2a3-c47e79154351)MySQL
-![gradle-icon](https://github.com/Giyong8504/memberBoard/assets/128211712/1cc55962-2a6a-427b-b069-febbfef874b6)Gardle
+![gradle-icon](https://github.com/Giyong8504/memberBoard/assets/128211712/1cc55962-2a6a-427b-b069-febbfef874b6)Gradle
 ![git-icon](https://github.com/Giyong8504/memberBoard/assets/128211712/3ddc519c-d58c-4b08-8da0-27ce47ff7e65)Git
 ![tomcat-icon](https://github.com/Giyong8504/memberBoard/assets/128211712/e5776633-34da-4d8a-8b0c-404196de1821)Tomcat
 
