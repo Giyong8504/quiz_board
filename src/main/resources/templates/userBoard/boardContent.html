@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns="http://www.w3.org/1999/html"
+      layout:decorate="~{layouts/boardMain}">
+
+<!-- layout:fragment 로 내용만 작성 -->
+<section layout:fragment="content">
+    <div>
+        <h1 th:text="${boardContent.title}"></h1>
+    </div>
+    <div>
+        <div th:text="${#temporals.format(boardContent.reg_dt, 'yyyy-MM-dd HH:mm')}"></div>
+        <div th:text="${boardContent.content}"></div>
+    </div>
+</section>
+
+</html>
