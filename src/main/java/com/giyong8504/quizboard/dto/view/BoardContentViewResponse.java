@@ -2,10 +2,12 @@ package com.giyong8504.quizboard.dto.view;
 
 import com.giyong8504.quizboard.entities.BoardData;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @Getter
+@NoArgsConstructor // 기본 생성자 자동 생성
 public class BoardContentViewResponse {
 
     private Long id;

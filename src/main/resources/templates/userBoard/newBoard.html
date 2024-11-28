@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns="http://www.w3.org/1999/html"
+      layout:decorate="~{layouts/boardMain}">
+
+<section layout:fragment="content">
+    <div>
+        <h1 th:if="${board.id} != null">글 수정</h1>
+        <h1 th:if="${board.id} == null">글 등록</h1>
+    </div>
+    <div>
+        <board>
+            <!-- id 값을 숨겨서 요청 -->
+            <input type="hidden" id="board_id" th:value="${board.id}">
+            <div>
+                <input type="text" placeholder="제목 입력" id="title" th:value="${board.title}">
+            </div>
+            <div>
+                <input type="text" placeholder="작성자" id="author" th:value="${board.author}">
+            </div>
+            <div>
+                <textarea row="10" placeholder="내용 입력" id="content" th:text="${board.content}"></textarea>
+            </div>
+            <div>
+                <button type="button" th:if="${board.id} != null" id="modify_btn">수정</button>
+                <button type="button" th:if="${board.id} == null" id="create_btn">생성</button>
+            </div>
+        </board>
+    </div>
+    <script src="/js/board/board.js"></script>
+</section>
+
+</html>

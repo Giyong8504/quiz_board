@@ -3,9 +3,11 @@ package com.giyong8504.quizboard.dto;
 import com.giyong8504.quizboard.entities.BoardData;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Getter
 @AllArgsConstructor
+@NoArgsConstructor
 public class AddBoardDataRequest {
 
     private String title;

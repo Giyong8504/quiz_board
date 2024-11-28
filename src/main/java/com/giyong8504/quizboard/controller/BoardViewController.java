@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -39,4 +40,19 @@ public class BoardViewController {
 
         return "userBoard/boardContent";
     }
+
+    // 게시글 수정, 생성
+    @GetMapping("/newBoard")
+    public String newBoard(@RequestParam(required = false) Long id, Model model) { // id값이 없으면 null 반환함
+        if (id == null) { // id 값이 없을 경우 생성
+            model.addAttribute("board", new BoardContentViewResponse());
+        }
+        else { // id 값이 있을 경우 조회 후 뷰로 전달
+            BoardData boardData = boardDataService.findById(id);
+            model.addAttribute("board", new BoardContentViewResponse(boardData));
+        }
+
+        return "userBoard/newBoard";
+    }
+
 }
