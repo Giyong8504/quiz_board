@@ -16,10 +16,12 @@
         </thead>
         <tbody>
         <tr th:each="item : ${board}"> <!-- model로 연결한 board를 통해 item에 값을 전달 -->
-            <th th:text="${item.id}"></th>
-            <th th:text="${item.title}"></th>
-            <th th:text="${item.author}"></th>
-            <th th:text="${item.reg_dt}"></th>
+            <td th:text="${item.id}"></td>
+            <td>
+                <a th:href="@{/board/{id}(id=${item.id})}" th:text="${item.title}"></a>
+            </td>
+            <td th:text="${item.author}"></td>
+            <td th:text="${#temporals.format(item.reg_dt, 'yyyy-MM-dd HH:mm')}"></td>
         </tr>
         </tbody>
     </table>
