@@ -9,9 +9,17 @@
         <h1 th:text="${boardContent.title}"></h1>
     </div>
     <div>
-        <div th:text="${#temporals.format(boardContent.reg_dt, 'yyyy-MM-dd HH:mm')}"></div>
-        <div th:text="${boardContent.content}"></div>
+        <!-- id값을 hidden으로 뷰에는 숨겨서 가져오고 board_id는 js에서 사용 -->
+        <input type="hidden" id="board_id" th:value="${boardContent.id}">
+        <div>
+            <!-- 날짜의 형식 지정, 작성 내용 가져오기 -->
+            <div th:text="${#temporals.format(boardContent.reg_dt, 'yyyy-MM-dd HH:mm')}"></div>
+            <div th:text="${boardContent.content}"></div>
+        </div>
+        <div>
+            <button type="button" id="delete_btn">삭제</button>
+        </div>
     </div>
+    <script src="/js/board/board.js"></script>
 </section>
-
 </html>
