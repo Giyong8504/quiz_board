@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns="http://www.w3.org/1999/html"
+      layout:decorate="~{layouts/boardMain}">
+
+<section layout:fragment="content">
+    <div>
+        <h1>회원가입</h1>
+        <form method="post" th:action="@{/join}" th:object="${joinForm}">
+            <div th:each="err : ${#fields.globalErrors()}" th:text="${err}"></div>
+            <div>
+                <div>
+                    <input type="text" name="email" th:field="*{email}" placeholder="아이디">
+                    <div th:each="err : ${#fields.errors('email')}" th:text="${err}"></div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <input type="password" name="password" th:field="*{password}" placeholder="비밀번호">
+                    <div class="error-message" th:each="err : ${#fields.errors('password')}" th:text="${err}"></div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <input type="password" name="userPwRe" th:field="*{userPwRe}" placeholder="비밀번호 확인">
+                    <div class="error-message" th:each="err : ${#fields.errors('userPwRe')}" th:text="${err}"></div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <input type="text" name="userNm" th:field="*{userNm}" placeholder="사용자 이름">
+                    <div class="error-message" th:each="err : ${#fields.errors('userNm')}" th:text="${err}"></div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <input type="text" name="mobile" th:field="*{mobile}" placeholder="전화번호">
+                    <div class="error-message" th:each="err : ${#fields.errors('mobile')}" th:text="${err}"></div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <input type="checkbox" name="agree" value="true" th:field="*{agree}" id="agree">
+                    <label for="agree">약관동의</label>
+                    <div th:each="err : ${#fields.errors('agree')}" th:text="${err}"></div>
+                </div>
+            </div>
+            <button type="submit">가입하기</button>
+        </form>
+    </div>
+</section>
+</html>
