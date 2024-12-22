@@ -1,4 +1,4 @@
-package com.giyong8504.quizboard.controller;
+package com.giyong8504.quizboard.controller.board;
 
 import com.giyong8504.quizboard.dto.view.BoardContentViewResponse;
 import com.giyong8504.quizboard.dto.view.BoardListViewResponse;
