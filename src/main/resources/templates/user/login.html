@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns="http://www.w3.org/1999/html"
+      layout:decorate="~{layouts/boardMain}">
+
+<section layout:fragment="content">
+    <h1>로그인 페이지</h1>
+    <form method="post" th:action="@{/login}" th:object="${joinForm}">
+        <div th:if="${session.globalError != null}" th:text="${session.globalError}"></div>
+        <div>
+            <input type="text" name="email" placeholder="이메일">
+            <div th:if="${session.requiredEmail != null}" th:text="${session.requiredEmail}"></div>
+        </div>
+        <div>
+            <input type="password" name="password" placeholder="비밀번호">
+            <div th:if="${session.requiredPassword != null}" th:text="${session.requiredPassword}"></div>
+        </div>
+        <button type="submit">로그인</button>
+    </form>
+</section>
+</html>

@@ -38,22 +38,22 @@ public class UserInfo implements UserDetails {
     }
 
     @Override
-    public boolean isAccountNonExpired() {
-        return false;
+    public boolean isAccountNonExpired() { // 계정 만료 여부
+        return true;
     }
 
     @Override
-    public boolean isAccountNonLocked() {
-        return false;
+    public boolean isAccountNonLocked() { // 계정 잠김 여부
+        return true;
     }
 
     @Override
-    public boolean isCredentialsNonExpired() {
-        return false;
+    public boolean isCredentialsNonExpired() { // 인증 자격 증명 여부
+        return true;
     }
 
     @Override
-    public boolean isEnabled() {
-        return false;
+    public boolean isEnabled() { // 계정 활성화 여부
+        return true;
     }
 }
