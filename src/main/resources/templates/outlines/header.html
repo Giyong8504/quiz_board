@@ -1,6 +1,18 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"> <!-- 스프링 시큐리티 기능사용 -->
     <div th:fragment="header">
         <div style="background-color: #eee">사이트 상단</div>
+        <div>
+            <a href="/">메인으로</a>
+
+            <!-- 로그인하지 않았을 경우 노출 / 로그인 후 사라짐-->
+            <div sec:authorize="isAnonymous()">
+                <button type="button" onclick="location.href='/login'">로그인</button>
+                <button type="button" onclick="location.href='/join'">회원가입</button>
+            </div>
+            <div sec:authorize="isAuthenticated()">
+                <button type="button" id="logout-btn" onclick="location.href='/logout'">로그아웃</button>
+            </div>
     </div>
 </html>
